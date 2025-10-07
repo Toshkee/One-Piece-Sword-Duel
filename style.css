@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background: black;
+}
+
+
+#game {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url('assets /background.jpg') no-repeat center center/cover;
+}
+
+#hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  color: white;
+}
+
+.player1,
+.player2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.health-bar {
+  width: 500px;
+  height: 15px;
+  background-color: red;
+  border: 2px solid white;
+  margin-top: 5px;
+}
+
+.health-fill {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  transition: width 0.3s ease-out;
+}
+
+#timer {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#arena {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.fighter {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+#zoro {
+  left: 50px;
+  background-image: url('assets /zoro.png');
+  height: 500px;
+  width: 210px;
+  /* transform: translateX(-110%); */
+}
+
+#shanks {
+  right: 50px;
+  background-image: url('assets /shanks.png');
+  height: 500px;
+  width: 150px;
+  /* transform: translateX(900%) */
+}
+
+#result {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 30px;
+  color: yellow;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#restart {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background: white;
+  border-radius: 5px;
+}
+
+
+#start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+}
+
+#instructions {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 30px 50px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+}
+
+#instructions h2 {
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+#instructions h3 {
+  color: #00ffff;
+  margin-bottom: 5px;
+}
+
+#start {
+  padding: 15px 40px;
+  font-size: 22px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}

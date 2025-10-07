@@ -1,4 +1,4 @@
-                                One Piece-Sword Duel
+                One Piece-Sword Duel
 
 # ⚔️ One Piece - Sword Duel
 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Piece Sword Duel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <div id="start-screen">
+    <div id="instructions">
+      <h2>How to Play</h2>
+
+      <div>
+        <h3>Player 1 (Zoro)</h3>
+        <p><b>A</b> → Move Left</p>
+        <p><b>D</b> → Move Right</p>
+        <p><b>W</b> → Jump</p>
+        <p><b>Space</b> → Attack</p>
+      </div>
+
+      <div>
+        <h3>Player 2 (Shanks)</h3>
+        <p><b>←</b> → Move Left</p>
+        <p><b>→</b> → Move Right</p>
+        <p><b>↑</b> → Jump</p>
+        <p><b>Enter</b> → Attack</p>
+      </div>
+    </div>
+
+    <button id="start">Start Game</button>
+  </div>
+
+
+
+  <div id="game">
+
+    <div id="hud">
+      <div class="player1">
+        <div>Zoro</div>
+        <div class="health-bar">
+          <div id="zoro-health" class="health-fill"></div>
+        </div>
+      </div>
+
+      <div id="timer">45</div>
+
+      <div class="player2">
+        <div>Shanks</div>
+        <div class="health-bar">
+          <div id="shanks-health" class="health-fill"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="arena">
+      <div id="zoro" class="fighter"></div>
+      <div id="shanks" class="fighter"></div>
+    </div>
+
+
+    <div id="result">
+      <div id="winner"></div>
+      <button id="restart">Restart</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
