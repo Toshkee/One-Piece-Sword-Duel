@@ -150,7 +150,9 @@ body {
 
 
 .slash {
-  position: absolute;
+  position: relative;
+  top: 650px;
+  right: 600px;
   width: 200px;
   height: 200px;
   background-size: contain;
@@ -161,13 +163,12 @@ body {
 #shanks-slash {
   position: relative;
   top: 700px;
-  left: 600px;
+  right: 300px;
   width: 200px;
   height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
   display: none;
-
 }
 
 #arena {

@@ -113,53 +113,6 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
-// function zoroAttack() {
-//     zoroAttackCooldown = true;
-
-//     const distance = Math.abs(zoroX - shanksX);
-//     if (distance < 150 && shanksHealth > 0) {
-//         shanksHealth -= 30;
-//         if (shanksHealth < 0) shanksHealth = 0;
-//         shanksHealthEl.style.width = shanksHealth + '%';
-//     }
-
-
-//     if (shanksHealth <= 0) {
-//         endGame('Zoro wins!');
-//     }
-
-
-//     setTimeout(() => {
-//         zoroAttackCooldown = false;
-//     }, 500);
-// }
-
-// zoro.classList.add('hit');
-// setTimeout(() => zoro.classList.remove('hit'), 500);
-
-
-// function shanksAttack() {
-//     shanksAttackCooldown = true;
-
-//     const distance = Math.abs(shanksX - zoroX);
-//     if (distance < 150 && zoroHealth > 0) {
-//         zoroHealth -= 30;
-//         if (zoroHealth < 0) zoroHealth = 0;
-//         zoroHealthEl.style.width = zoroHealth + '%';
-//     }
-
-//     if (zoroHealth <= 0) {
-//         endGame('Shanks wins!');
-//     }
-
-//     setTimeout(() => {
-//         shanksAttackCooldown = false;
-//     }, 500);
-// }
-
-// shanks.classList.add('hit');
-// setTimeout(() => shanks.classList.remove('hit'), 500);
-
 
 function gameLoop() {
     if (gameOver) return;
@@ -211,8 +164,6 @@ function showSlash(character) {
         slash.style.display = 'none';
     }, 500);
 }
-
-
 
 function zoroAttack() {
     zoroAttackCooldown = true;
