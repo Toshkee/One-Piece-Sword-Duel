@@ -54,11 +54,7 @@ body {
   font-weight: bold;
 }
 
-#arena {
-  position: relative;
-  flex: 1;
-  overflow: hidden;
-}
+
 
 .fighter {
   position: absolute;
@@ -75,7 +71,6 @@ body {
   background-image: url('assets /zoro.png');
   height: 500px;
   width: 210px;
-  /* transform: translateX(-110%); */
 }
 
 #shanks {
@@ -83,7 +78,6 @@ body {
   background-image: url('assets /shanks.png');
   height: 500px;
   width: 150px;
-  /* transform: translateX(900%) */
 }
 
 #result {
@@ -92,7 +86,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 30px;
-  color: yellow;
+  color: rgb(6, 6, 5);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -153,3 +147,32 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
+
+
+.slash {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: none;
+}
+
+#shanks-slash {
+  position: relative;
+  top: 700px;
+  left: 600px;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: none;
+
+}
+
+#arena {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
