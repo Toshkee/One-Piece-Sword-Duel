@@ -147,22 +147,21 @@ restartBtn.addEventListener('click', () => location.reload());
 
 function showSlash(character) {
     const slash = document.getElementById(`${character}-slash`);
-    const charEl = document.getElementById(character);
-    const rect = charEl.getBoundingClientRect();
+    const fighter = document.getElementById(character);
 
 
-    slash.style.left = rect.left + rect.width / 5 + 'px';
-    slash.style.bottom = (parseFloat(charEl.style.bottom) || 0) + 60 + 'px';
+    const x = parseFloat(fighter.style.left) || 0;
+    const y = parseFloat(fighter.style.bottom) || 0;
+
+
+    slash.style.left = (x + (character === 'zoro' ? 70 : -80)) + 'px';
+    slash.style.bottom = (y + 40) + 'px';
     slash.style.display = 'block';
-
-
-
-    slash.style.backgroundImage = `url('assets/${character}-slash.gif')`;
-
+    slash.style.zIndex = 10;
 
     setTimeout(() => {
         slash.style.display = 'none';
-    }, 500);
+    }, 400);
 }
 
 function zoroAttack() {
@@ -170,8 +169,8 @@ function zoroAttack() {
     showSlash('zoro');
 
     const distance = Math.abs(zoroX - shanksX);
-    if (distance < 180 && shanksHealth > 0) {
-        shanksHealth -= 30;
+    if (distance < 190 && shanksHealth > 0) {
+        shanksHealth -= 15;
         if (shanksHealth < 0) shanksHealth = 0;
         shanksHealthEl.style.width = shanksHealth + '%';
     }
@@ -191,8 +190,8 @@ function shanksAttack() {
     showSlash('shanks');
 
     const distance = Math.abs(shanksX - zoroX);
-    if (distance < 180 && zoroHealth > 0) {
-        zoroHealth -= 30;
+    if (distance < 190 && zoroHealth > 0) {
+        zoroHealth -= 15;
         if (zoroHealth < 0) zoroHealth = 0;
         zoroHealthEl.style.width = zoroHealth + '%';
     }

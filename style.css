@@ -150,30 +150,23 @@ body {
 
 
 .slash {
-  position: relative;
-  top: 650px;
-  right: 600px;
+  position: absolute;
   width: 200px;
   height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
   display: none;
+  z-index: 10;
+  pointer-events: none;
 }
 
 #shanks-slash {
-  position: relative;
-  top: 700px;
-  right: 300px;
-  width: 200px;
-  height: 200px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: none;
+  z-index: 10;
 }
+
 
 #arena {
   position: relative;
   flex: 1;
   overflow: hidden;
 }
-

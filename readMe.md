@@ -1,68 +1,88 @@
-                One Piece-Sword Duel
+# ⚔️ One Piece Sword Duel
 
-# ⚔️ One Piece - Sword Duel
+![Screenshot of the game's main page with instructions](/assets%20/instructions.png)
 
-A **One Piece themed 2D fighting game** built with **HTML, CSS, and JavaScript**.  
-The game lets you battle between iconic characters such as **Roronoa Zoro** and **Shanks** 
+![Screenshot of the game](/assets%20/maingame.png)
+
+
+
+A **2-player browser fighting game** inspired by **One Piece**, featuring **Zoro** and **Shanks** in a sword duel.  
+Players can move, jump, and attack to reduce their opponent’s health bar — the fighter with the most health left when the timer runs out (or who defeats the other) wins!
 
 ---
 
-## 🎮 Game Concept
-- Two One Piece characters fight each other with their **swords**.  
-- Each character has their **own health bar** displayed at the top of the screen.  
-- A **timer** runs in the middle of the health bars — if time runs out, the fighter with the most health wins.  
-- Characters can **move left, move right, and jump**.  
-- When a character wins, they will **shout their unique attack move name** from the anime (e.g., *"Onigiri!"* or *"Divine Departure!"*).  
-- A **One Piece themed background** sets the stage.  
-- At the end of the match, a **Restart button** appears so you can play again.  
-- Includes **win/lose conditions**.  
+## 🎮 Gameplay Overview
+
+Battle between **Zoro** and **Shanks** in a one-minute duel.  
+Each player controls their character using different keys and can perform attacks that deal damage when close to the opponent.
 
 ---
 
 ## 🕹️ Controls
 
-When the game starts, a **"How to Play" instructions popup** appears to guide you.
+### 🧔 Player 1 — Zoro
+| Action | Key |
+|--------|-----|
+| Move Left | **A** |
+| Move Right | **D** |
+| Jump | **W** |
+| Attack | **Spacebar** |
 
-
-### Player 1 (Zoro)
-- `A` → Move Left  
-- `D` → Move Right  
-- `W` → Jump  
-- `Space` → Attack  
-
-### Player 2 (Shanks)
-- `←` → Move Left  
-- `→` → Move Right  
-- `↑` → Jump  
-- `Enter` → Attack  
-
----
-
-## ✨ Features
-- Two characters: **Zoro** and **Shanks**.  
-- Animated health bars that shrink as damage is taken.  
-- Sword attack animations and sound effects.  
-- Character **unique victory lines** when they win.  
-- Timer-based or knockout victory.  
-- Restart option after match ends.  
-- Expandable: can add more characters, attacks, and effects.  
+### 🧓 Player 2 — Shanks
+| Action | Key |
+|--------|-----|
+| Move Left | **←** |
+| Move Right | **→** |
+| Jump | **↑** |
+| Attack | **Enter** |
 
 ---
 
+## ⚔️ Game Features
+
+- 🕹️ **Two-player local battle**
+- ⏳ **60-second timer**
+- 💚 **Dynamic health bars**
+- ⚡ **Sword slash animations**
+- 🔊 **Background music** (“Overtaken” from One Piece)
+
+
+## 🧠 Game Logic Summary
+	•	The game starts when the Start Game button is clicked.
+	•	A background track plays automatically.
+	•	Players can move, jump, and attack using their respective controls.
+	•	Each successful sword hit reduces the opponent’s health by 15%.
+	•	When a player’s health reaches 0% or the timer hits 0, the game ends.
+	•	A winner screen appears showing the result and a Restart button.
+
+
 
 ---
 
-## 🔮 Future Improvements
-- Add more playable characters (Luffy, Sanji, Mihawk, etc.).  
-- Special combo attacks and ultimate moves.  
-- More backgrounds (Marineford, Dressrosa, etc.).  
- 
+## 🧩 Project Structure
 
----
+│
+├── index.html        # Main HTML file
+├── style.css         # Styling for layout, HUD, and characters
+├── app.js            # Game logic, controls, and interactions
+│
+└── assets/           # Image and audio assets
+├── background.jpg
+├── zoro.png
+├── shanks.png
+├── slash.gif
+├── slash2.gif
+└── overtaken.mp3
+
 
 ## 🏴‍☠️ Credits
-- Inspired by **Eiichiro Oda's One Piece**.  
-- Built with **HTML, CSS, JavaScript**.  
-- Made as a fun fan project for learning game development in the browser.  
+	•	Developed by: [Pavle Tosic]
+	•	Characters: Zoro & Shanks (from One Piece)
+	•	Music: “Overtaken” – One Piece Original Soundtrack
+	•	Inspiration: 2D fighting games like Street Fighter and Stick Fight.
 
----
+
+## 📜 License
+
+This project is made for educational and entertainment purposes.
+All One Piece assets and characters belong to Eiichiro Oda / Toei Animation.
