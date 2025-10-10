@@ -4,7 +4,7 @@
 
 ![Screenshot of the game](/assets%20/maingame.png)
 
-
+https://toshkee.github.io/One-Piece-Sword-Duel/
 
 A **2-player browser fighting game** inspired by **One Piece**, featuring **Zoro** and **Shanks** in a sword duel.  
 Players can move, jump, and attack to reduce their opponent’s health bar — the fighter with the most health left when the timer runs out (or who defeats the other) wins!
