@@ -17,6 +17,10 @@ export interface CharacterConfig {
   spriteDir: string;
   /** How much to scale the 200×200 source frames in the world. */
   scale: number;
+  /** Direction the source art faces by default (1 = right, -1 = left). The
+   *  sprite is mirrored only when a fighter needs to face the other way, so
+   *  sheets drawn facing opposite directions both face their opponent. */
+  artFacing: 1 | -1;
   /** Physics/hurt body, in source-frame pixels (before scale). Decoupled from
    *  the art so the body stays stable even when attack frames extend the art. */
   body: { width: number; height: number; offsetX: number; offsetY: number };
@@ -59,7 +63,8 @@ export const CHARACTERS: CharacterConfig[] = [
     tagline: 'The wandering blade',
     themeColor: 0x3fb6ff,
     spriteDir: 'martial-hero-1',
-    scale: 3.0,
+    scale: 2.6,
+    artFacing: 1, // hero-1 art faces right
     // Measured from the idle frame's alpha bbox: char occupies x[76,113] y[70,122].
     body: { width: 37, height: 52, offsetX: 76, offsetY: 70 },
     speed: 300,
@@ -90,7 +95,8 @@ export const CHARACTERS: CharacterConfig[] = [
     tagline: 'The crimson onslaught',
     themeColor: 0xff5a6e,
     spriteDir: 'martial-hero-2',
-    scale: 3.0,
+    scale: 2.6,
+    artFacing: -1, // hero-2 art faces left
     // Measured from the idle frame's alpha bbox: char occupies x[86,119] y[74,128].
     body: { width: 33, height: 54, offsetX: 86, offsetY: 74 },
     speed: 320,

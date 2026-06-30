@@ -47,6 +47,8 @@ export class FightScene extends Phaser.Scene {
 
   private sparks!: Phaser.GameObjects.Particles.ParticleEmitter;
   private dust!: Phaser.GameObjects.Particles.ParticleEmitter;
+  private p1Shadow!: Phaser.GameObjects.Ellipse;
+  private p2Shadow!: Phaser.GameObjects.Ellipse;
 
   private roundState: RoundState = 'intro';
   private koActive = false;
@@ -85,7 +87,8 @@ export class FightScene extends Phaser.Scene {
   private buildArena(): void {
     const bg = this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'background');
     bg.setDisplaySize(GAME_WIDTH, GAME_HEIGHT).setDepth(0);
-    this.add.image(GAME_WIDTH / 2 + 250, GAME_HEIGHT - 96, 'shop').setScale(2).setDepth(1).setAlpha(0.95);
+    // A single animated shop, grounded on the dirt path as a right-side set piece.
+    this.add.sprite(842, FLOOR_Y + 4, 'shop').setOrigin(0.5, 1).setScale(1.45).setDepth(1).play('shop-anim');
     // Mood overlay for contrast behind the HUD/fighters.
     this.add.rectangle(GAME_WIDTH / 2, GAME_HEIGHT / 2, GAME_WIDTH, GAME_HEIGHT, 0x05060c, 0.22).setDepth(2);
 
@@ -135,6 +138,11 @@ export class FightScene extends Phaser.Scene {
     this.physics.add.collider(this.p1, ground);
     this.physics.add.collider(this.p2, ground);
     this.physics.add.collider(this.p1, this.p2);
+
+    // Soft drop-shadows so each fighter reads as planted on the ground (they
+    // shrink/fade as a fighter leaves the floor — see updateShadows).
+    this.p1Shadow = this.add.ellipse(this.p1.x, FLOOR_Y + 6, 100, 22, 0x000000, 0.38).setDepth(8);
+    this.p2Shadow = this.add.ellipse(this.p2.x, FLOOR_Y + 6, 100, 22, 0x000000, 0.38).setDepth(8);
 
     // Kick up dust where a fighter lands. (this.dust is created in buildParticles,
     // which runs before any landing can occur.)
@@ -355,6 +363,7 @@ export class FightScene extends Phaser.Scene {
       return;
     }
 
+    this.updateShadows();
     if (this.roundState !== 'fighting') return;
 
     const dt = delta / 1000;
@@ -364,6 +373,20 @@ export class FightScene extends Phaser.Scene {
 
     this.resolveHits(this.p1, this.p2);
     this.resolveHits(this.p2, this.p1);
+  }
+
+  /** Keep each shadow under its fighter, shrinking + fading as they jump. */
+  private updateShadows(): void {
+    const pairs: [Phaser.GameObjects.Ellipse, Fighter][] = [
+      [this.p1Shadow, this.p1],
+      [this.p2Shadow, this.p2],
+    ];
+    for (const [shadow, fighter] of pairs) {
+      const bottom = (fighter.body as Phaser.Physics.Arcade.Body).bottom;
+      const k = Phaser.Math.Clamp(1 - Math.max(0, FLOOR_Y - bottom) / 340, 0.4, 1);
+      shadow.x = fighter.x;
+      shadow.setScale(k, k).setAlpha(0.38 * k).setVisible(fighter.visible);
+    }
   }
 
   private resolveHits(attacker: Fighter, defender: Fighter): void {

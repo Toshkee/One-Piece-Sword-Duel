@@ -24,7 +24,9 @@ export class PreloadScene extends Phaser.Scene {
 
     this.load.setPath(`${import.meta.env.BASE_URL}assets`);
     this.load.image('background', 'background/background.png');
-    this.load.image('shop', 'background/shop.png');
+    // shop.png is a 6-frame animation strip (708×128 → 118px frames), not a
+    // single image. Load it as a sheet so we can play it as a small prop.
+    this.load.spritesheet('shop', 'background/shop.png', { frameWidth: 118, frameHeight: 128 });
 
     for (const char of CHARACTERS) {
       for (const animName of Object.keys(SHEET_FILES) as (keyof CharacterConfig['anims'])[]) {
@@ -48,6 +50,13 @@ export class PreloadScene extends Phaser.Scene {
         });
       });
     }
+
+    this.anims.create({
+      key: 'shop-anim',
+      frames: this.anims.generateFrameNumbers('shop', { start: 0, end: 5 }),
+      frameRate: 4,
+      repeat: -1,
+    });
 
     this.makeParticleTextures();
     this.scene.start('MenuScene');

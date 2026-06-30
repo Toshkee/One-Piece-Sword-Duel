@@ -172,7 +172,7 @@ export class Fighter extends Phaser.Physics.Arcade.Sprite {
   private faceOpponent(): void {
     if (!this.opponent) return;
     this.facing = this.opponent.x < this.x ? -1 : 1;
-    this.setFlipX(this.facing === -1);
+    this.setFlipX(this.facing !== this.config.artFacing);
   }
 
   // ---- Attacking --------------------------------------------------------
@@ -292,7 +292,7 @@ export class Fighter extends Phaser.Physics.Arcade.Sprite {
     const restY = FLOOR_Y - (this.config.body.offsetY + this.config.body.height - 100) * this.config.scale;
     this.setPosition(x, restY);
     this.setVelocity(0, 0);
-    this.setFlipX(facing === -1);
+    this.setFlipX(facing !== this.config.artFacing);
     (this.body as Phaser.Physics.Arcade.Body).moves = true;
     this.anims.resume();
     this.playState('idle', true);

@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { GAME_HEIGHT, GAME_WIDTH, DIFFICULTIES } from '../config/constants';
+import { FLOOR_Y, GAME_HEIGHT, GAME_WIDTH, DIFFICULTIES } from '../config/constants';
 import type { GameMode } from '../core/types';
 import { sound } from '../audio/SoundManager';
 
@@ -16,9 +16,13 @@ export class MenuScene extends Phaser.Scene {
   create(): void {
     this.buildBackdrop();
 
-    // Fighter previews squaring off.
-    this.add.sprite(250, 372, 'ronin-idle').setScale(2.5).play('ronin-idle');
-    this.add.sprite(GAME_WIDTH - 250, 372, 'oni-idle').setScale(2.5).setFlipX(true).play('oni-idle');
+    // Fighter previews squaring off, planted on the dirt path.
+    const previewY = FLOOR_Y - 55; // feet land on FLOOR_Y at scale 2.5
+    this.add.ellipse(250, FLOOR_Y + 3, 92, 20, 0x000000, 0.3);
+    this.add.ellipse(GAME_WIDTH - 250, FLOOR_Y + 3, 92, 20, 0x000000, 0.3);
+    // Ronin art faces right, Oni art faces left → both already face centre.
+    this.add.sprite(250, previewY, 'ronin-idle').setScale(2.5).play('ronin-idle');
+    this.add.sprite(GAME_WIDTH - 250, previewY, 'oni-idle').setScale(2.5).play('oni-idle');
 
     // Title.
     const title = this.add
@@ -102,7 +106,12 @@ export class MenuScene extends Phaser.Scene {
   private buildBackdrop(): void {
     const bg = this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'background');
     bg.setDisplaySize(GAME_WIDTH, GAME_HEIGHT);
-    this.add.image(GAME_WIDTH / 2 + 250, GAME_HEIGHT - 128, 'shop').setScale(2).setAlpha(0.9);
+    this.add
+      .sprite(GAME_WIDTH / 2 + 250, FLOOR_Y + 4, 'shop')
+      .setOrigin(0.5, 1)
+      .setScale(1.6)
+      .setAlpha(0.95)
+      .play('shop-anim');
     this.add.rectangle(GAME_WIDTH / 2, GAME_HEIGHT / 2, GAME_WIDTH, GAME_HEIGHT, 0x05060c, 0.55);
   }
 

@@ -7,8 +7,9 @@
 // --- World ---
 export const GAME_WIDTH = 1024;
 export const GAME_HEIGHT = 576;
-/** World Y at which a fighter's feet rest (the visual floor of the arena). */
-export const FLOOR_Y = 482;
+/** World Y at which a fighter's feet rest — aligned to the dirt path baked into
+ *  background.png (the walkable surface, not the canvas bottom). */
+export const FLOOR_Y = 512;
 export const WORLD_GRAVITY = 2100;
 /** Horizontal padding that keeps fighters inside the arena. */
 export const ARENA_PADDING = 60;
