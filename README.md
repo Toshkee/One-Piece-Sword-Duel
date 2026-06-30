@@ -8,7 +8,7 @@
 
 <p align="center">
   <img src="docs/screenshot-menu.png" width="49%" alt="Main menu" />
-  <img src="docs/screenshot-fight.png" width="49%" alt="A blocked strike mid-fight" />
+  <img src="docs/screenshot-fight.png" width="49%" alt="A sword strike connecting mid-fight" />
 </p>
 
 ---
