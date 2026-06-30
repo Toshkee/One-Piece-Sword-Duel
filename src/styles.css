@@ -1,0 +1,47 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: radial-gradient(circle at 50% 30%, #1a2138 0%, #0b0e1a 70%, #05060c 100%);
+  font-family: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+#app canvas {
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 70px rgba(0, 0, 0, 0.7);
+  max-width: 100%;
+  max-height: 100%;
+  touch-action: none;
+}
+
+#boot-fallback {
+  text-align: center;
+  color: #cbd2e6;
+}
+
+#boot-fallback h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
