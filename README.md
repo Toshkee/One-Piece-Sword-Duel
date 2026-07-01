@@ -1,8 +1,8 @@
-# ⚔️ Sword Duel
+# ⚔️ Ronin Duel
 
 **A polished, juice-driven 2D fighting game for the browser — Phaser 4 + TypeScript. Play instantly, no install.**
 
-[**▶ Play now**](https://toshkee.github.io/One-Piece-Sword-Duel/) · Two animated swordfighters, frame-accurate combat, an FSM AI opponent, best-of-three rounds, and a full "game feel" layer (hitstop, screen shake, particles, a cinematic slow-mo KO).
+[**▶ Play now**](https://toshkee.github.io/Ronin-Duel/) · A wandering **Ronin** and a crimson **Oni** cross blades — frame-accurate combat, an FSM AI opponent, best-of-three rounds, and a full "game feel" layer (hitstop, screen shake, particles, a cinematic slow-mo KO).
 
 ![Gameplay](docs/gameplay.gif)
 
@@ -101,7 +101,7 @@ The single biggest lever in combat feel is **hitstop**: freezing both fighters f
 
 ## 📜 History, credits & license
 
-This began as a General Assembly bootcamp project ("One Piece Sword Duel") and was **fully rebuilt** from a vanilla-DOM prototype into this Phaser 4 + TypeScript game, and **re-themed to be IP-clean**. The original version is preserved on the `legacy/one-piece-vanilla` branch.
+This began as a General Assembly bootcamp project ("One Piece Sword Duel") and was **fully rebuilt** from a vanilla-DOM prototype into this Phaser 4 + TypeScript game, then **re-themed to be IP-clean** and renamed **Ronin Duel**. The original version is preserved on the `legacy/one-piece-vanilla` branch.
 
 - **Art:** "Martial Hero" 1 & 2 by **LuizMelo** — see [CREDITS.md](CREDITS.md).
 - **Audio:** procedurally generated (no third-party samples).

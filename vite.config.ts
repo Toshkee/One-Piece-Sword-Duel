@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 // Relative base so the build works both locally and from a GitHub Pages
-// project subpath (https://<user>.github.io/One-Piece-Sword-Duel/).
+// project subpath (https://<user>.github.io/Ronin-Duel/).
 export default defineConfig({
   base: './',
   build: {

@@ -65,7 +65,7 @@ export class PreloadScene extends Phaser.Scene {
   private buildLoadingBar(): void {
     const cx = GAME_WIDTH / 2;
     const cy = GAME_HEIGHT / 2;
-    this.add.text(cx, cy - 50, '⚔️ SWORD DUEL', {
+    this.add.text(cx, cy - 50, '⚔️ RONIN DUEL', {
       fontFamily: 'Georgia, serif',
       fontSize: '34px',
       color: '#ffd34d',

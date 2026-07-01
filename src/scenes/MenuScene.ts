@@ -26,7 +26,7 @@ export class MenuScene extends Phaser.Scene {
 
     // Title.
     const title = this.add
-      .text(GAME_WIDTH / 2, 84, 'SWORD DUEL', {
+      .text(GAME_WIDTH / 2, 84, 'RONIN DUEL', {
         fontFamily: 'Georgia, serif',
         fontSize: '72px',
         color: '#ffd34d',
